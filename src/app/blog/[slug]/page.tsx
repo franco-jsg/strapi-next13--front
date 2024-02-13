@@ -5,6 +5,7 @@ import { Post } from "@/app/interfaces/post";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Markdown from "react-markdown";
 
 const getData = async (slug = "") => {
   const path = "/posts";
@@ -53,8 +54,9 @@ const Slug = async ({ params }: Props) => {
       <div className="prose">
         {/* Este error en particular está codificado en TypeScript. El equipo de React está trabajando con el equipo de TypeScript para resolver esto. */}
         {/* https://github.com/vercel/next.js/issues/42292 */}
-        {/* @ts-expect-error Server Component */}
-        <MDXRemote source={body} />
+
+        {/* <MDXRemote source={body} /> */}
+        <Markdown>{body}</Markdown>
       </div>
     </div>
   );
