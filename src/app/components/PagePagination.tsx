@@ -27,8 +27,12 @@ const PagePagination = ({ pagination }: Props) => {
         <ul className="inline-flex -space-x-px text-sm">
           <li>
             <Link
-              href={page === 1 ? `/blog?page=${page}` : `/blog?page=${page - 1}`}
-              className={`${classPrevious} ${page === 1 ? "opacity-50 pointer-events-none" : ""}`}
+              href={
+                page === 1 ? `/blog?page=${page}` : `/blog?page=${page - 1}`
+              }
+              className={`${classPrevious} ${
+                page === 1 ? "opacity-50 pointer-events-none" : ""
+              }`}
             >
               Previous
             </Link>
@@ -37,21 +41,25 @@ const PagePagination = ({ pagination }: Props) => {
             <li>
               <Link
                 href={`/blog?page=${index + 1}`}
-                className={
-                    `${index + 1 === page ? classNumberActive : classNumber}`
-                }
+                className={`${
+                  index + 1 === page ? classNumberActive : classNumber
+                }`}
               >
-                {
-                    index + 1
-                }
+                {index + 1}
               </Link>
             </li>
           ))}
 
           <li>
             <Link
-              href={ page === pageCount ? `/blog?page=${page}` : `/blog?page=${page + 1}`}
-              className={`${classNext} ${page === pageCount ? "opacity-50 pointer-events-none" : ""}` }
+              href={
+                page === pageCount
+                  ? `/blog?page=${page}`
+                  : `/blog?page=${page + 1}`
+              }
+              className={`${classNext} ${
+                page === pageCount ? "opacity-50 pointer-events-none" : ""
+              }`}
             >
               Next
             </Link>
