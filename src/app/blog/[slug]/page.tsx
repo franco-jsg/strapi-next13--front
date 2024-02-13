@@ -55,7 +55,7 @@ const Slug = async ({ params }: Props) => {
         {/* Este error en particular está codificado en TypeScript. El equipo de React está trabajando con el equipo de TypeScript para resolver esto. */}
         {/* https://github.com/vercel/next.js/issues/42292 */}
 
-        <MDXRemote source={body} />
+        <Markdown>{body}</Markdown>
 
       </div>
     </div>
