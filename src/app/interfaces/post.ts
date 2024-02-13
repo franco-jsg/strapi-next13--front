@@ -6,7 +6,8 @@ export interface Post {
 interface Attributes2 {
   title: string;
   description: string;
-  body: Body[];
+  // body: Body[];
+  body: string;
   slug: string;
   createdAt: string;
   updatedAt: string;
@@ -67,12 +68,12 @@ interface Providermetadata {
   resource_type: string;
 }
 
-interface Body {
-  type: string;
-  children: Child[];
-}
+// interface Body {
+//   type: string;
+//   children: Child[];
+// }
 
-interface Child {
-  text: string;
-  type: string;
-}
+// interface Child {
+//   text: string;
+//   type: string;
+// }
