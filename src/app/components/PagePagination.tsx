@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "../helpers/classname";
 
 interface Props {
   pagination: {
@@ -30,9 +31,9 @@ const PagePagination = ({ pagination }: Props) => {
               href={
                 page === 1 ? `/blog?page=${page}` : `/blog?page=${page - 1}`
               }
-              className={`${classPrevious} ${
-                page === 1 ? "opacity-50 pointer-events-none" : ""
-              }`}
+              className={cn(classPrevious, {
+                "opacity-50 pointer-events-none" : page === 1
+              })}
             >
               Previous
             </Link>
@@ -57,9 +58,9 @@ const PagePagination = ({ pagination }: Props) => {
                   ? `/blog?page=${page}`
                   : `/blog?page=${page + 1}`
               }
-              className={`${classNext} ${
-                page === pageCount ? "opacity-50 pointer-events-none" : ""
-              }`}
+              className={cn(classNext, {
+                "opacity-50 pointer-events-none" : page === pageCount
+              })}
             >
               Next
             </Link>

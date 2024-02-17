@@ -13,7 +13,7 @@ const PageCardImage = ({post}: Props) => {
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <Link href={`/blog/${slug}`}>
-        <Image className="rounded-t-lg" src={url} alt={`image ${title}`} width={width} height={height} />
+        <Image className="rounded-t-lg mx-auto" src={url} alt={`image ${title}`} width={width} height={height} />
       </Link>
       <div className="p-5">
         <Link href={`/blog/${slug}`}>
